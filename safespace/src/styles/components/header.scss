@@ -5,6 +5,7 @@
   z-index: 4;
   @include media("<=phone") {
     height: 96px;
+    width: 100%;
   }
   .logo {
     a {
