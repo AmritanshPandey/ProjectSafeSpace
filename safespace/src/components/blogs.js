@@ -1,26 +1,26 @@
 import React from "react";
-import { ReactComponent as BlogNext } from "../assets/arrow-right.svg";
-import { ReactComponent as BlogPrev } from "../assets/arrow-left.svg";
+// import { ReactComponent as BlogNext } from "../assets/arrow-right.svg";
+// import { ReactComponent as BlogPrev } from "../assets/arrow-left.svg";
 
 const blogList = [
   {
     id: 1,
     subtitle: "Depression",
-    title: "Sample Title 1 for the blog 1",
+    title: "Learning to Embrace Bad Days in Depression Recovery",
     img: "depression",
   },
 
   {
     id: 2,
     subtitle: "Anxiety",
-    title: "Sample Title 1 for the blog 2",
+    title: "How to Tackle Anxiety-Induced Procrastination",
     img: "anxiety",
   },
 
   {
     id: 3,
-    subtitle: "Stress",
-    title: "Sample Title 1 for the blog 3",
+    subtitle: "Obsessive-compulsive disorder",
+    title: "Can Minimalism Help with OCD?",
     img: "stress",
   },
 ];
@@ -29,14 +29,14 @@ const Blogs = () => {
   return (
     <section className="blogs">
       <div className="container-fluid">
-        <div className="blogs-navigation">
+        {/* <div className="blogs-navigation">
           <div className="blogs-arrow prev disbaled">
             <BlogPrev />
           </div>
           <div className="blogs-arrow next">
             <BlogNext />
           </div>
-        </div>
+        </div> */}
         <div className="row">
           {blogList.map((blogItem) => (
             <div className="blog" key={blogItem.id}>
