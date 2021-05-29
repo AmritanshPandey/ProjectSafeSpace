@@ -1,0 +1,87 @@
+.blogs {
+  height: 50vh;
+  height: calc(var(--vh, 1vh) * 50);
+  .blogs-navigation {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 6;
+    padding: 32px;
+    box-sizing: border-box;
+    @include media("<=tablet") {
+      display: none;
+    }
+    .blogs-arrow {
+      background: rgba(0, 0, 0, 0.4);
+      height: 72px;
+      width: 72px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        color: $white;
+        height: 28px;
+        width: 28px;
+      }
+      &.disabled {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  .row {
+    @include media("<=tablet") {
+      flex-direction: column;
+    }
+    .blog {
+      position: relative;
+      background: $black;
+      cursor: pointer;
+      &:hover {
+        .blog-image {
+          opacity: 0.4;
+        }
+      }
+      .blog-details {
+        width: 33.333333vw;
+        height: 50vh;
+        height: calc(var(--vh, 1vh) * 50);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 32px;
+        box-sizing: border-box;
+        z-index: 1;
+        position: relative;
+        @include media("<=tablet") {
+          width: 100vw;
+        }
+        @include media("<=phone") {
+          padding: 16px;
+        }
+
+        span {
+          margin-top: 156px;
+          font-size: 1.6rem;
+          opacity: 0.8;
+          color: $white;
+          font-weight: 600;
+          @include media ("<=desktop", "<=tablet") {
+              font-size: 1.4rem;
+          }
+          @include media ("<=phone")
+        }
+        h2 {
+        }
+      }
+      .blog-image {
+        img {
+        }
+      }
+    }
+  }
+}

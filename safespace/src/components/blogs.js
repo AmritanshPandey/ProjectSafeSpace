@@ -26,35 +26,35 @@ const blogList = [
 ];
 
 const Blogs = () => {
-  return(
-  <section className="blogs">
-    <div className="container-fluid">
-      <div className="blogs-navigation">
-        <div className="blogs-arrow prev disbaled">
-          <BlogPrev />
+  return (
+    <section className="blogs">
+      <div className="container-fluid">
+        <div className="blogs-navigation">
+          <div className="blogs-arrow prev disbaled">
+            <BlogPrev />
+          </div>
+          <div className="blogs-arrow next">
+            <BlogNext />
+          </div>
         </div>
-        <div className="blogs-arrow next">
-          <BlogNext />
-        </div>
-      </div>
-      <div className="row">
-        {blogList.map(blogItem => (
-          <div className="blog" key={blogItem.id}>
-            <div className="blog-details">
+        <div className="row">
+          {blogList.map((blogItem) => (
+            <div className="blog" key={blogItem.id}>
+              <div className="blog-details">
                 <span>{blogItem.subtitle}</span>
                 <h2>{blogItem.title}</h2>
-            </div>
-            <div className="blog-image">
-            <img
-                  src={require(`../assets/${blogItem.img}.png`)}
+              </div>
+              <div className="blog-image">
+                <img
+                  src={require(`../assets/${blogItem.img}.png`).default}
                   alt={blogItem.subtitle}
                 />
-          </div>
-          </div>
-        ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 };
 
