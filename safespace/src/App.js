@@ -1,23 +1,27 @@
 import { useEffect } from "react";
+import { gsap } from "gsap";
 import Banner from "./components/banner";
 import Blogs from "./components/blogs";
 import Header from "./components/header";
+import IntroOverlay from "./components/introOverlay";
 import "./styles/App.scss";
 
 function App() {
 
   useEffect(() => {
-    let vh = window.innerHeight * .01;
-    document.documentElement.style.setProperty('--vh',  `${vh}px`);
 
     window.addEventListener('resize', () => {
-      // We execute the same script as before
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+
+
+      
     });
   }, []);
   return (
     <div className="App">
+      <IntroOverlay />
       <Header />
       <Banner />
      <Blogs /> 
