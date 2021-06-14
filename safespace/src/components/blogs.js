@@ -1,6 +1,7 @@
 import React from "react";
 // import { ReactComponent as BlogNext } from "../assets/arrow-right.svg";
 // import { ReactComponent as BlogPrev } from "../assets/arrow-left.svg";
+import { ReactComponent as RightArrow } from "../assets/arrow-right.svg";
 
 const blogList = [
   {
@@ -43,6 +44,11 @@ const Blogs = () => {
               <div className="blog-details">
                 <span>{blogItem.subtitle}</span>
                 <h2>{blogItem.title}</h2>
+                <div className="btn-row">
+                  <a href="/">
+                    Read More <RightArrow />
+                  </a>
+                </div>
               </div>
               <div className="blog-image">
                 <img
