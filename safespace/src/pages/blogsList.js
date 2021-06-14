@@ -5,7 +5,7 @@ const BlogList = () => {
         <div className="page">
             <div className="container">
                 <div className="row">
-                    <h3>This is the Get In Touch Page page</h3>
+                    <h3>This is the Blog List page</h3>
                 </div>
             </div>
             
