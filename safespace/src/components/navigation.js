@@ -31,27 +31,27 @@ const Navigation = () => {
             <div className="nav-infos">
               <ul className="nav-info">
                 <li className="nav-info-label">Email</li>
-                <li>
-                  <NavLink to="/getintouch" exact>
+                <li>safe.space@gmail.com
+                  {/* <NavLink to="/getintouch" exact>
                     Get in touch with us
-                  </NavLink>
+                  </NavLink> */}
                 </li>
-                <li>
+                {/* <li>
                   <NavLink to="/audit" exact>
                     Get a free audit
                   </NavLink>
-                </li>
+                </li> */}
               </ul>
-              <ul className="nav-info">
+              {/* <ul className="nav-info">
                 <li className="nav-info-label">Headquarter</li>
                 <li>Route du Jura 49</li>
                 <li>1700 Fribourg</li>
                 <li>Switzerland</li>
-              </ul>
-              <ul className="nav-info">
+              </ul> */}
+              {/* <ul className="nav-info">
                 <li className="nav-info-label">Phone</li>
                 <li>+41 (0) 79 510 28 70</li>
-              </ul>
+              </ul> */}
               <ul className="nav-info">
                 <li className="nav-info-label">Legal</li>
                 <li>Privacy & Cookies</li>
