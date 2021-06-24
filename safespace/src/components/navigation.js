@@ -26,13 +26,13 @@ const Navigation = () => {
               </li>
             </ul>
           </div>
-          {/* <div className="nav-column">
+          <div className="nav-column">
             <div className="nav-label">Contact</div>
             <div className="nav-infos">
               <ul className="nav-info">
                 <li className="nav-info-label">Email</li>
                 <li>
-                  <NavLink to="/contact" exact>
+                  <NavLink to="/getintouch" exact>
                     Get in touch with us
                   </NavLink>
                 </li>
@@ -57,7 +57,7 @@ const Navigation = () => {
                 <li>Privacy & Cookies</li>
               </ul>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </nav>
