@@ -1,145 +1,32 @@
-import React, { useState, useEffect } from "react";
-import { NavLink, withRouter } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { ReactComponent as UpArrow } from "../assets/up-arrow-circle.svg";
-import gsap from "gsap";
+import { openMenu, closeMenu } from "../animations/menuAnimations";
 
-let tl = gsap.timeline();
+// Define reducer
 
 const Header = ({ history, dimensions }) => {
   const [menuState, setMenuState] = useState({ menuOpened: false });
-
   useEffect(() => {
+    //Listening for page changes.
     history.listen(() => {
       setMenuState({ menuOpened: false });
     });
-
     if (menuState.menuOpened === true) {
-      //Run open animation
-
-      tl.to("body", { duration: 0.01, css: { display: "block" } })
-        .to(".App", {
-          duration: 1,
-          y: dimensions.width <= 654 ? "70vh" : dimensions.height / 2,
-          ease: "expo.inOut",
-        })
-        .to(".hamburger-menu span", {
-          duration: 0.6,
-          delay: -1,
-          scaleX: 0,
-          transformOrigin: "50% 0%",
-          ease: "expo.inOut",
-        })
-        .to("#Path_1", {
-          duration: 0.4,
-          delay: -0.6,
-          css: {
-            strokeDashoffset: 10,
-            strokeDasharray: 5,
-          },
-        })
-        .to("#Path_2", {
-          duration: 0.4,
-          delay: -0.6,
-          css: {
-            strokeDashoffset: 10,
-            strokeDasharray: 20,
-          },
-        })
-        .to("#Line_1", {
-          duration: 0.4,
-          delay: -0.6,
-          css: {
-            strokeDashoffset: 40,
-            strokeDasharray: 18,
-          },
-        })
-        .to("#Circle", {
-          duration: 0.6,
-          delay: -0.8,
-          css: {
-            strokeDashoffset: 0,
-          },
-        })
-        .to(".hamburger-menu span", {
-          duration: 0.6,
-          delay: -0.6,
-          scaleX: 1,
-          transformOrigin: "50% 0%",
-          ease: "expo.inOut",
-        })
-        .to(".humburger-menu-close", {
-          duration: 0.6,
-          delay: -0.8,
-          css: {
-            display: "block",
-          },
-        });
-    } else {
-      //Run close menu animation
-      tl.to(".App", {
-        duration: 1,
-        y: 0,
-        ease: "expo.inOut",
-      })
-        .to("#circle", {
-          duration: 0.6,
-          delay: -0.6,
-          css: {
-            strokeDashoffset: -193,
-            strokeDasharray: 227,
-          },
-        })
-        .to("#Path_1", {
-          duration: 0.4,
-          delay: -0.6,
-          css: {
-            strokeDashoffset: 10,
-            strokeDasharray: 10,
-          },
-        })
-        .to("#Path_2", {
-          duration: 0.4,
-          delay: -0.6,
-          css: {
-            strokeDashoffset: 10,
-            strokeDasharray: 10,
-          },
-        })
-        .to("#Line_1", {
-          duration: 0.4,
-          delay: -0.6,
-          css: {
-            strokeDashoffset: 40,
-            strokeDasharray: 40,
-          },
-        })
-        .to(".hamburger-menu span", {
-          duration: 0.6,
-          delay: -0.6,
-          scaleX: 1,
-          transformOrigin: "50% 0%",
-          ease: "expo.inOut",
-        })
-        .to(".hamburger-menu-close", {
-          duration: 0,
-          css: {
-            display: "none",
-          },
-        })
-        .to("body", {
-          css: {
-            overflow: "auto",
-          },
-        });
+      openMenu(dimensions.width);
+    } else if (menuState.menuOpened === false) {
+      closeMenu();
     }
-  }, );
+  });
+
   return (
     <div className="header">
       <div className="container">
         <div className="row v-center space-between">
           <div className="logo">
             <NavLink to="/" exact>
-              SAFE [SPACE]
+              AGENCY
             </NavLink>
           </div>
           <div className="nav-toggle">
@@ -151,8 +38,8 @@ const Header = ({ history, dimensions }) => {
               <span></span>
             </div>
             <div
-              onClick={() => setMenuState({ menuOpened: false })}
               className="hamburger-menu-close"
+              onClick={() => setMenuState({ menuOpened: false })}
             >
               <UpArrow />
             </div>
@@ -162,5 +49,4 @@ const Header = ({ history, dimensions }) => {
     </div>
   );
 };
-
 export default withRouter(Header);

@@ -68,7 +68,7 @@ nav {
       display: flex;
       flex-wrap: wrap;
       @include media("<=654px") {
-        display: none;
+        // display: none;
       }
       .nav-info {
         padding: 0;
@@ -76,7 +76,7 @@ nav {
         &:nth-child(2),
         &:nth-child(3) {
           @include media("<=654px") {
-            display: none;
+            // display: none;
           }
         }
 

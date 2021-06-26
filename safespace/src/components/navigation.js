@@ -52,10 +52,10 @@ const Navigation = () => {
                 <li className="nav-info-label">Phone</li>
                 <li>+41 (0) 79 510 28 70</li>
               </ul> */}
-              <ul className="nav-info">
+              {/* <ul className="nav-info">
                 <li className="nav-info-label">Legal</li>
                 <li>Privacy & Cookies</li>
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>
